@@ -74,6 +74,10 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .why { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.35; }
 .meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .price { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--ink); }
+.price-row { display: inline-flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.price.deal { color: #ee4d2d; font-family: "Roboto", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.15rem; }
+.was { color: var(--muted); opacity: .75; font-size: .85rem; font-family: "Roboto", Helvetica, Arial, sans-serif; }
+.off { align-self: center; font-family: "Roboto", Helvetica, Arial, sans-serif; font-size: .74rem; font-weight: 700; color: #ee4d2d; background: #feeeea; padding: 2px 5px; border-radius: 2px; }
 .buy { margin-top: 4px; justify-self: start; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 9px 14px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
 .buy:hover { filter: brightness(1.05); }
 .empty { text-align: center; color: var(--muted); padding: 20px; }
@@ -121,7 +125,7 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
 <script>
 const PRODUCTS = [
   { id: "potes", name: "Kit 4 Potes Herméticos com Tampa de Bambu", cat: "Organização", tags: ["Do último vídeo", "10.10"], video: 1,
-    why: "Despensa de revista: dá pra ver tudo e mantém os grãos fresquinhos.", price: "R$ 39,99", proof: "10 mil+ vendidos",
+    why: "Despensa de revista: dá pra ver tudo e mantém os grãos fresquinhos.", price: "R$ 39,99", oldPrice: "R$ 99,99", off: "-60%", proof: "10 mil+ vendidos",
     img: "img/potes.jpg", url: "https://s.shopee.com.br/9KifjCZhtI" },
   { id: "led", name: "Luz LED sem fio com sensor de presença", cat: "Iluminação", tags: ["Do último vídeo", "10.10"], video: 2,
     why: "Abriu o armário, acende sozinha. Recarrega no USB e cola com ímã.", price: "R$ 29,90", proof: "nota 4,8",
@@ -184,7 +188,17 @@ function renderList() {
     const meta = document.createElement("div"); meta.className = "meta";
     const price = document.createElement("span"); price.className = "price"; price.textContent = p.price;
     const proof = document.createElement("span"); proof.textContent = p.proof;
-    meta.append(price, proof);
+    if (p.oldPrice) {
+      price.classList.add("deal");
+      const was = document.createElement("s"); was.className = "was"; was.textContent = p.oldPrice;
+      was.setAttribute("aria-label", "Preço anterior " + p.oldPrice);
+      const off = document.createElement("span"); off.className = "off"; off.textContent = p.off;
+      const row = document.createElement("span"); row.className = "price-row";
+      row.append(price, was, off);
+      meta.append(row, proof);
+    } else {
+      meta.append(price, proof);
+    }
     const a = document.createElement("a");
     a.className = "buy"; a.href = p.url; a.target = "_blank"; a.rel = "noopener sponsored";
     a.textContent = "Ver na Shopee →";
