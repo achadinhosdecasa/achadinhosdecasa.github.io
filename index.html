@@ -103,10 +103,10 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
   </header>
 
   <section class="latest" aria-labelledby="latest-title">
-    <div class="latest-top"><span class="eyebrow">Do último vídeo</span><span class="voucher">10.10</span></div>
+    <div class="latest-top"><span class="eyebrow">Do último post</span><span class="voucher">10.10</span></div>
     <h2 id="latest-title">5 achadinhos de casa pra pegar na 10.10</h2>
     <p><strong>LEMBRANDO:</strong> cupons liberados à meia-noite, meio-dia e 18h!</p>
-    <button type="button" id="show-latest">Ver os 5 do vídeo</button>
+    <button type="button" id="show-latest">Ver os 5 do post</button>
   </section>
 
   <section class="controls" aria-label="Filtrar produtos">
@@ -124,24 +124,24 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
 
 <script>
 const PRODUCTS = [
-  { id: "potes", name: "Kit 4 Potes Herméticos com Tampa de Bambu", cat: "Organização", tags: ["Do último vídeo", "10.10"], video: 1,
+  { id: "potes", name: "Kit 4 Potes Herméticos com Tampa de Bambu", cat: "Organização", tags: ["Do último post", "10.10"], video: 1,
     why: "Despensa de revista: dá pra ver tudo e mantém os grãos fresquinhos.", price: "R$ 39,99", oldPrice: "R$ 99,99", off: "-60%", proof: "10 mil+ vendidos",
     img: "img/potes.jpg", url: "https://s.shopee.com.br/9KifjCZhtI" },
-  { id: "led", name: "Luz LED sem fio com sensor de presença", cat: "Iluminação", tags: ["Do último vídeo", "10.10"], video: 2,
+  { id: "led", name: "Luz LED sem fio com sensor de presença", cat: "Iluminação", tags: ["Do último post", "10.10"], video: 2,
     why: "Abriu o armário, acende sozinha. Recarrega no USB e cola com ímã.", price: "R$ 29,90", proof: "nota 4,8",
     img: "img/led.jpg", url: "https://s.shopee.com.br/9pewK9WrHW" },
-  { id: "giratorio", name: "Organizador Giratório 360°", cat: "Organização", tags: ["Do último vídeo", "10.10"], video: 3,
+  { id: "giratorio", name: "Organizador Giratório 360°", cat: "Organização", tags: ["Do último post", "10.10"], video: 3,
     why: "Acaba com o pote esquecido no fundo da geladeira. Serve pra temperos e maquiagem.", price: "R$ 29,90", proof: "10 mil+ vendidos",
     img: "img/giratorio.jpg", url: "https://s.shopee.com.br/1LgOCXcYIs" },
-  { id: "picador", name: "Picador Elétrico 3L", cat: "Cozinha", tags: ["Do último vídeo", "10.10"], video: 4,
+  { id: "picador", name: "Picador Elétrico 3L", cat: "Cozinha", tags: ["Do último post", "10.10"], video: 4,
     why: "Cebola, alho e carne picados em segundos.", price: "R$ 69,98", proof: "100 mil+ vendidos",
     img: "img/picador.jpg", url: "https://s.shopee.com.br/2qVBzJ5yFC" },
-  { id: "esfregao", name: "Esfregão Giratório 360° com Balde", cat: "Limpeza", tags: ["Do último vídeo", "10.10", "Favorito"], video: 5,
+  { id: "esfregao", name: "Esfregão Giratório 360° com Balde", cat: "Limpeza", tags: ["Do último post", "10.10", "Favorito"], video: 5,
     why: "O meu favorito: lava e centrifuga no próprio balde, com rodinhas.", price: "R$ 79,90", proof: "2 refis inclusos",
     img: "img/esfregao.jpg", url: "https://s.shopee.com.br/3LRSaEhazt" }
 ];
 
-const CATS = ["Todos", "Do último vídeo", ...Array.from(new Set(PRODUCTS.map(p => p.cat)))];
+const CATS = ["Todos", "Do último post", ...Array.from(new Set(PRODUCTS.map(p => p.cat)))];
 let active = "Todos";
 const listEl = document.getElementById("list");
 const chipsEl = document.getElementById("chips");
@@ -182,7 +182,7 @@ function renderList() {
     img.src = p.img; img.alt = p.name; img.loading = "lazy"; img.width = 104; img.height = 104;
     const info = document.createElement("div"); info.className = "info";
     const tag = document.createElement("span"); tag.className = "tag";
-    tag.textContent = p.video ? `#${p.video} no vídeo · ${p.cat}` : p.cat;
+    tag.textContent = p.video ? `#${p.video} no post · ${p.cat}` : p.cat;
     const name = document.createElement("p"); name.className = "name"; name.textContent = p.name;
     const why = document.createElement("p"); why.className = "why"; why.textContent = p.why;
     const meta = document.createElement("div"); meta.className = "meta";
@@ -209,7 +209,7 @@ function renderList() {
 }
 
 document.getElementById("show-latest").addEventListener("click", () => {
-  active = "Do último vídeo"; searchEl.value = ""; renderChips(); renderList();
+  active = "Do último post"; searchEl.value = ""; renderChips(); renderList();
   listEl.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
 });
 searchEl.addEventListener("input", renderList);
