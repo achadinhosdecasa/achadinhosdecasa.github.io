@@ -104,9 +104,9 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
 
   <section class="latest" aria-labelledby="latest-title">
     <div class="latest-top"><span class="eyebrow">Do último post</span><span class="voucher">10.10</span></div>
-    <h2 id="latest-title">5 achadinhos de casa pra pegar na 10.10</h2>
+    <h2 id="latest-title">Presentes pras crianças nesse 10/10</h2>
     <p><strong>LEMBRANDO:</strong> cupons liberados à meia-noite, meio-dia e 18h!</p>
-    <button type="button" id="show-latest">Ver os 5 do post</button>
+    <button type="button" id="show-latest">Ver os 5 jogos do post</button>
   </section>
 
   <section class="controls" aria-label="Filtrar produtos">
@@ -127,34 +127,34 @@ const PRODUCTS = [
   { id: "utensilios", name: "Kit 12 Peças de Utensílios em Silicone e Bambu", cat: "Cozinha", tags: ["Promoção do dia"], video: 0,
     why: "Pegador, batedor, espátulas, conchas e o porta-utensílios..", price: "R$ 28,90", oldPrice: "R$ 99,00", off: "-71%", proof: "50 mil+ vendidos",
     img: "img/utensilios.jpg", url: "https://s.shopee.com.br/30ocFr95jK" },
-  { id: "stop", name: "Jogo Stop com Tabuleiro e Temporizador", cat: "Dia das Crianças", tags: ["10.10", "Presente"], video: 0,
+  { id: "stop", name: "Jogo Stop com Tabuleiro e Temporizador", cat: "Dia das Crianças", tags: ["10.10", "Do último post", "Presente"], video: 0,
     why: "O Stop que todo mundo ama, com teclas de letras e cronômetro de 10 segundos. Diversão pra família toda.", price: "a partir de R$ 57,90", oldPrice: "R$ 129,90", off: "-55%", proof: "nota 4,9 · 5 mil+ vendidos",
     img: "img/stop.jpg", url: "https://s.shopee.com.br/7KxcEfYjM1" }
-  ,{ id: "baddog", name: "Jogo Bad Dog: Não Acorde o Cachorro", cat: "Dia das Crianças", tags: ["10.10", "Presente"], video: 0,
+  ,{ id: "baddog", name: "Jogo Bad Dog: Não Acorde o Cachorro", cat: "Dia das Crianças", tags: ["10.10", "Do último post", "Presente"], video: 0,
     why: "Pega os ossinhos sem acordar o cachorro. Ri muito quando ele pula!", price: "R$ 56,15", oldPrice: "R$ 75,50", off: "-26%", proof: "nota 4,8 · 6 mil+ vendidos",
     img: "img/baddog.jpg", url: "https://s.shopee.com.br/LnrtpCJLL" }
-  ,{ id: "pirata", name: "Jogo Pula Pirata (Barril Pirata)", cat: "Dia das Crianças", tags: ["10.10", "Presente"], video: 0,
+  ,{ id: "pirata", name: "Jogo Pula Pirata (Barril Pirata)", cat: "Dia das Crianças", tags: ["10.10", "Do último post", "Presente"], video: 0,
     why: "O clássico que nunca perde a graça. Tem em tamanho grande, médio e mini.", price: "a partir de R$ 18,90", oldPrice: "R$ 27,97", off: "-32%", proof: "nota 4,8 · 20 mil+ vendidos",
     img: "img/pirata.jpg", url: "https://s.shopee.com.br/AAHnbtAPQS" }
-  ,{ id: "magnetico", name: "Jogo Magnético de Estratégia com Roleta", cat: "Dia das Crianças", tags: ["10.10", "Presente"], video: 0,
+  ,{ id: "magnetico", name: "Jogo Magnético de Estratégia com Roleta", cat: "Dia das Crianças", tags: ["10.10", "Do último post", "Presente"], video: 0,
     why: "Estratégia com ímãs: quem fizer as bolinhas grudarem perde. Pais e filhos jogam juntos.", price: "R$ 26,99", oldPrice: "R$ 54,99", off: "-51%", proof: "nota 4,9 · 5 mil+ vendidos",
     img: "img/magnetico.jpg", url: "https://s.shopee.com.br/9zyNPaONfX" }
-  ,{ id: "tapao", name: "Jogo Tapão Animal (50 animais)", cat: "Dia das Crianças", tags: ["10.10", "Presente"], video: 0,
+  ,{ id: "tapao", name: "Jogo Tapão Animal (50 animais)", cat: "Dia das Crianças", tags: ["10.10", "Do último post", "Presente"], video: 0,
     why: "Vira a carta e quem bater primeiro no bicho certo ganha. Rápido e muito divertido.", price: "R$ 29,90", proof: "nota 4,9 · 2 mil+ vendidos",
     img: "img/tapao.jpg", url: "https://s.shopee.com.br/4B0aSsFO3D" },
-  { id: "potes", name: "Kit 4 Potes Herméticos com Tampa de Bambu", cat: "Organização", tags: ["Do último post", "10.10"], video: 1,
+  { id: "potes", name: "Kit 4 Potes Herméticos com Tampa de Bambu", cat: "Organização", tags: ["10.10"], video: 1,
     why: "Despensa de revista: dá pra ver tudo e mantém os grãos fresquinhos.", price: "R$ 39,99", oldPrice: "R$ 99,99", off: "-60%", proof: "10 mil+ vendidos",
     img: "img/potes.jpg", url: "https://s.shopee.com.br/9KifjCZhtI" },
-  { id: "led", name: "Luz LED sem fio com sensor de presença", cat: "Iluminação", tags: ["Do último post", "10.10"], video: 2,
+  { id: "led", name: "Luz LED sem fio com sensor de presença", cat: "Iluminação", tags: ["10.10"], video: 2,
     why: "Abriu o armário, acende sozinha. Recarrega no USB e cola com ímã.", price: "R$ 29,90", proof: "nota 4,8",
     img: "img/led.jpg", url: "https://s.shopee.com.br/9pewK9WrHW" },
-  { id: "giratorio", name: "Organizador Giratório 360°", cat: "Organização", tags: ["Do último post", "10.10"], video: 3,
+  { id: "giratorio", name: "Organizador Giratório 360°", cat: "Organização", tags: ["10.10"], video: 3,
     why: "Acaba com o pote esquecido no fundo da geladeira. Serve pra temperos e maquiagem.", price: "R$ 29,90", proof: "10 mil+ vendidos",
     img: "img/giratorio.jpg", url: "https://s.shopee.com.br/1LgOCXcYIs" },
-  { id: "picador", name: "Picador Elétrico 3L", cat: "Cozinha", tags: ["Do último post", "10.10"], video: 4,
+  { id: "picador", name: "Picador Elétrico 3L", cat: "Cozinha", tags: ["10.10"], video: 4,
     why: "Cebola, alho e carne picados em segundos.", price: "R$ 69,98", proof: "100 mil+ vendidos",
     img: "img/picador.jpg", url: "https://s.shopee.com.br/2qVBzJ5yFC" },
-  { id: "esfregao", name: "Esfregão Giratório 360° com Balde", cat: "Limpeza", tags: ["Do último post", "10.10", "Favorito"], video: 5,
+  { id: "esfregao", name: "Esfregão Giratório 360° com Balde", cat: "Limpeza", tags: ["10.10", "Favorito"], video: 5,
     why: "O meu favorito: lava e centrifuga no próprio balde, com rodinhas.", price: "R$ 79,90", proof: "2 refis inclusos",
     img: "img/esfregao.jpg", url: "https://s.shopee.com.br/3LRSaEhazt" }
   ,{ id: "espelho_organico", name: "Espelho Orgânico Grande (com opção de LED)", cat: "Decoração", tags: ["Posts anteriores"], video: 0,
