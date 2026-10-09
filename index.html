@@ -42,8 +42,7 @@ body { background: var(--bg); color: var(--ink); font-family: var(--font-body); 
 .wrap { max-width: 520px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 40px; display: grid; gap: 28px; }
 
 header { display: grid; justify-items: center; text-align: center; gap: 10px; }
-.mark { width: 76px; height: 76px; border-radius: 50%; background: var(--leaf-soft); display: grid; place-items: center; border: 2px solid var(--line); }
-.mark svg { width: 44px; height: 44px; }
+.mark { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; display: block; border: 3px solid var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,.12); }
 h1 { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; line-height: 1.05; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
 .handle { color: var(--muted); font-weight: 600; font-size: .95rem; text-decoration: none; }
 .handle:hover { color: var(--leaf); }
@@ -93,13 +92,7 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
 
 <div class="wrap">
   <header>
-    <div class="mark" aria-hidden="true">
-      <svg viewBox="0 0 48 48" fill="none">
-        <path d="M8 22 24 9l16 13v17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V22Z" fill="var(--accent)"/>
-        <rect x="20" y="28" width="8" height="13" rx="1" fill="var(--surface)"/>
-        <path d="M5 24 24 8l19 16" stroke="var(--leaf)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
+    <img class="mark" src="img/foto_perfil.jpg" alt="Achadinhos de Casa" width="88" height="88">
     <h1>Achadinhos de Casa</h1>
     <a class="handle" href="https://www.instagram.com/achadinhosdecasa265/" target="_blank" rel="noopener">@achadinhosdecasa265</a>
     <p class="tagline">Os achadinhos que eu recomendo pra sua casa. Toque no produto e compre direto na Shopee.</p>
