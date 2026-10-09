@@ -124,6 +124,9 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
 
 <script>
 const PRODUCTS = [
+  { id: "utensilios", name: "Kit 12 Peças de Utensílios em Silicone e Bambu", cat: "Cozinha", tags: ["Promoção do dia"], video: 0,
+    why: "Pegador, batedor, espátulas, conchas e o porta-utensílios..", price: "R$ 28,90", oldPrice: "R$ 99,00", off: "-71%", proof: "50 mil+ vendidos",
+    img: "img/utensilios.jpg", url: "https://s.shopee.com.br/30ocFr95jK" },
   { id: "potes", name: "Kit 4 Potes Herméticos com Tampa de Bambu", cat: "Organização", tags: ["Do último post", "10.10"], video: 1,
     why: "Despensa de revista: dá pra ver tudo e mantém os grãos fresquinhos.", price: "R$ 39,99", oldPrice: "R$ 99,99", off: "-60%", proof: "10 mil+ vendidos",
     img: "img/potes.jpg", url: "https://s.shopee.com.br/9KifjCZhtI" },
@@ -141,7 +144,7 @@ const PRODUCTS = [
     img: "img/esfregao.jpg", url: "https://s.shopee.com.br/3LRSaEhazt" }
 ];
 
-const CATS = ["Todos", "Do último post", ...Array.from(new Set(PRODUCTS.map(p => p.cat)))];
+const CATS = ["Todos", "Promoção do dia", "Do último post", ...Array.from(new Set(PRODUCTS.map(p => p.cat)))];
 let active = "Todos";
 const listEl = document.getElementById("list");
 const chipsEl = document.getElementById("chips");
@@ -182,7 +185,7 @@ function renderList() {
     img.src = p.img; img.alt = p.name; img.loading = "lazy"; img.width = 104; img.height = 104;
     const info = document.createElement("div"); info.className = "info";
     const tag = document.createElement("span"); tag.className = "tag";
-    tag.textContent = p.video ? `#${p.video} no post · ${p.cat}` : p.cat;
+    tag.textContent = p.video ? `#${p.video} no post · ${p.cat}` : (p.tags[0] ? `${p.tags[0]} · ${p.cat}` : p.cat);
     const name = document.createElement("p"); name.className = "name"; name.textContent = p.name;
     const why = document.createElement("p"); why.className = "why"; why.textContent = p.why;
     const meta = document.createElement("div"); meta.className = "meta";
