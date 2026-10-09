@@ -10,7 +10,7 @@
 <title>Achadinhos de Casa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap">
 <style>
 /* Layout: uma coluna estreita tipo "link na bio" — cabeçalho, destaque do último vídeo, filtros, lista de produtos */
 :root {
@@ -49,11 +49,15 @@ h1 { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; line
 .handle:hover { color: var(--leaf); }
 .tagline { margin: 0; color: var(--muted); max-width: 34ch; }
 
-.latest { background: var(--leaf); color: var(--leaf-ink); border-radius: 18px; padding: 18px 18px 16px; display: grid; gap: 10px; }
-.eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
-.latest h2 { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; line-height: 1.15; margin: 0; text-wrap: balance; }
-.latest p { margin: 0; opacity: .9; font-size: .95rem; }
-.latest button { justify-self: start; font: inherit; font-weight: 700; font-size: .95rem; border: 0; border-radius: 999px; padding: 10px 16px; background: var(--surface); color: var(--ink); cursor: pointer; }
+.latest { position: relative; overflow: hidden; background: linear-gradient(135deg, #f53d2d 0%, #ee4d2d 45%, #ff7337 100%); color: #ffffff; border-radius: 6px; padding: 16px 16px 14px; display: grid; gap: 8px; font-family: "Roboto", Helvetica, Arial, sans-serif; box-shadow: 0 2px 8px rgba(238, 77, 45, .25); }
+.latest::after { content: ""; position: absolute; right: -28px; top: -28px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255, 255, 255, .12); }
+.latest-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; background: #ffffff; color: #ee4d2d; padding: 3px 8px; border-radius: 2px; }
+.voucher { font-weight: 900; font-size: 1.05rem; letter-spacing: .02em; border: 1.5px dashed rgba(255,255,255,.85); border-radius: 4px; padding: 2px 10px; }
+.latest h2 { font-family: "Roboto", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.3rem; line-height: 1.2; margin: 0; text-wrap: balance; position: relative; }
+.latest p { margin: 0; font-size: .92rem; color: #fff3ee; position: relative; }
+.latest button { position: relative; justify-self: stretch; font-family: "Roboto", Helvetica, Arial, sans-serif; font-weight: 700; font-size: .98rem; border: 0; border-radius: 4px; padding: 11px 16px; background: #ffffff; color: #ee4d2d; cursor: pointer; }
+.latest button:hover { background: #fff3ee; }
 
 .controls { display: grid; gap: 12px; }
 .search { width: 100%; font: inherit; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
@@ -102,7 +106,7 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
   </header>
 
   <section class="latest" aria-labelledby="latest-title">
-    <span class="eyebrow">Do último vídeo</span>
+    <div class="latest-top"><span class="eyebrow">Do último vídeo</span><span class="voucher">10.10</span></div>
     <h2 id="latest-title">5 achadinhos de casa pra pegar na 10.10</h2>
     <p>Cupons no dia 10/10 à meia-noite, ao meio-dia e às 18h.</p>
     <button type="button" id="show-latest">Ver os 5 do vídeo</button>
