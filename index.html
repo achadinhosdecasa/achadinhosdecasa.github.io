@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Os achadinhos de casa que eu recomendo, com link direto pra Shopee.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Achadinhos de Casa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: uma coluna estreita tipo "link na bio" — cabeçalho, destaque do último vídeo, filtros, lista de produtos */
+:root {
+  --bg: #f2f4ee;
+  --surface: #ffffff;
+  --ink: #1d2721;
+  --muted: #5d6a61;
+  --line: #dde3d8;
+  --accent: #e2552c;
+  --accent-ink: #ffffff;
+  --leaf: #2f6b4f;
+  --leaf-soft: #e1ece4;
+  --leaf-ink: #ffffff;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141a16; --surface: #1d2520; --ink: #eef2ec; --muted: #a3b0a7; --line: #2d3832;
+    --accent: #f06a42; --accent-ink: #1a0f0a; --leaf: #8cc9a8; --leaf-soft: #22322a; --leaf-ink: #10241a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141a16; --surface: #1d2520; --ink: #eef2ec; --muted: #a3b0a7; --line: #2d3832;
+  --accent: #f06a42; --accent-ink: #1a0f0a; --leaf: #8cc9a8; --leaf-soft: #22322a; --leaf-ink: #10241a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 520px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 40px; display: grid; gap: 28px; }
+
+header { display: grid; justify-items: center; text-align: center; gap: 10px; }
+.mark { width: 76px; height: 76px; border-radius: 50%; background: var(--leaf-soft); display: grid; place-items: center; border: 2px solid var(--line); }
+.mark svg { width: 44px; height: 44px; }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; line-height: 1.05; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.handle { color: var(--muted); font-weight: 600; font-size: .95rem; text-decoration: none; }
+.handle:hover { color: var(--leaf); }
+.tagline { margin: 0; color: var(--muted); max-width: 34ch; }
+
+.latest { background: var(--leaf); color: var(--leaf-ink); border-radius: 18px; padding: 18px 18px 16px; display: grid; gap: 10px; }
+.eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.latest h2 { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; line-height: 1.15; margin: 0; text-wrap: balance; }
+.latest p { margin: 0; opacity: .9; font-size: .95rem; }
+.latest button { justify-self: start; font: inherit; font-weight: 700; font-size: .95rem; border: 0; border-radius: 999px; padding: 10px 16px; background: var(--surface); color: var(--ink); cursor: pointer; }
+
+.controls { display: grid; gap: 12px; }
+.search { width: 100%; font: inherit; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.chip { flex: none; font: inherit; font-weight: 600; font-size: .9rem; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.list { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.item { display: grid; grid-template-columns: 104px 1fr; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 10px; }
+.item img { width: 104px; height: 104px; object-fit: cover; border-radius: 10px; background: #fff; display: block; }
+.info { min-width: 0; display: grid; gap: 4px; }
+.tag { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--leaf); }
+.name { font-weight: 700; font-size: 1rem; line-height: 1.25; margin: 0; }
+.why { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.35; }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.price { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--ink); }
+.buy { margin-top: 4px; justify-self: start; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 9px 14px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.buy:hover { filter: brightness(1.05); }
+.empty { text-align: center; color: var(--muted); padding: 20px; }
+
+footer { display: grid; gap: 8px; text-align: center; color: var(--muted); font-size: .82rem; }
+footer p { margin: 0; max-width: 46ch; justify-self: center; }
+
+@media (max-width: 380px) {
+  .item { grid-template-columns: 84px 1fr; }
+  .item img { width: 84px; height: 84px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .buy, .chip { transition: filter .15s, background .15s; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none">
+        <path d="M8 22 24 9l16 13v17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V22Z" fill="var(--accent)"/>
+        <rect x="20" y="28" width="8" height="13" rx="1" fill="var(--surface)"/>
+        <path d="M5 24 24 8l19 16" stroke="var(--leaf)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Achadinhos de Casa</h1>
+    <a class="handle" href="https://www.instagram.com/achadinhosdecasa265/" target="_blank" rel="noopener">@achadinhosdecasa265</a>
+    <p class="tagline">Os achadinhos que eu recomendo pra sua casa. Toque no produto e compre direto na Shopee.</p>
+  </header>
+
+  <section class="latest" aria-labelledby="latest-title">
+    <span class="eyebrow">Do último vídeo</span>
+    <h2 id="latest-title">5 achadinhos de casa pra pegar na 10.10</h2>
+    <p>Cupons no dia 10/10 à meia-noite, ao meio-dia e às 18h.</p>
+    <button type="button" id="show-latest">Ver os 5 do vídeo</button>
+  </section>
+
+  <section class="controls" aria-label="Filtrar produtos">
+    <input class="search" id="search" type="search" placeholder="Procurar produto (ex.: geladeira, luz)" aria-label="Procurar produto">
+    <div class="chips" id="chips" role="group" aria-label="Categorias"></div>
+  </section>
+
+  <ul class="list" id="list" aria-live="polite"></ul>
+
+  <footer>
+    <p>Os links são de afiliada: quando você compra por eles, eu ganho uma pequena comissão e você não paga nada a mais.</p>
+    <p>Preços e estoque podem mudar a qualquer momento na Shopee.</p>
+  </footer>
+</div>
+
+<script>
+const PRODUCTS = [
+  { id: "potes", name: "Kit 4 Potes Herméticos com Tampa de Bambu", cat: "Organização", tags: ["Do último vídeo", "10.10"], video: 1,
+    why: "Despensa de revista: dá pra ver tudo e mantém os grãos fresquinhos.", price: "menos de R$ 40", proof: "10 mil+ vendidos",
+    img: "img/potes.jpg", url: "https://s.shopee.com.br/9KifjCZhtI" },
+  { id: "led", name: "Luz LED sem fio com sensor de presença", cat: "Iluminação", tags: ["Do último vídeo", "10.10"], video: 2,
+    why: "Abriu o armário, acende sozinha. Recarrega no USB e cola com ímã.", price: "menos de R$ 30", proof: "nota 4,8",
+    img: "img/led.jpg", url: "https://s.shopee.com.br/9pewK9WrHW" },
+  { id: "giratorio", name: "Organizador Giratório 360°", cat: "Organização", tags: ["Do último vídeo", "10.10"], video: 3,
+    why: "Acaba com o pote esquecido no fundo da geladeira. Serve pra temperos e maquiagem.", price: "menos de R$ 30", proof: "10 mil+ vendidos",
+    img: "img/giratorio.jpg", url: "https://s.shopee.com.br/1LgOCXcYIs" },
+  { id: "picador", name: "Picador Elétrico 3L", cat: "Cozinha", tags: ["Do último vídeo", "10.10"], video: 4,
+    why: "Cebola, alho e carne picados em segundos.", price: "menos de R$ 70", proof: "100 mil+ vendidos",
+    img: "img/picador.jpg", url: "https://s.shopee.com.br/2qVBzJ5yFC" },
+  { id: "esfregao", name: "Esfregão Giratório 360° com Balde", cat: "Limpeza", tags: ["Do último vídeo", "10.10", "Favorito"], video: 5,
+    why: "O meu favorito: lava e centrifuga no próprio balde, com rodinhas.", price: "menos de R$ 80", proof: "2 refis inclusos",
+    img: "img/esfregao.jpg", url: "https://s.shopee.com.br/3LRSaEhazt" }
+];
+
+const CATS = ["Todos", "Do último vídeo", ...Array.from(new Set(PRODUCTS.map(p => p.cat)))];
+let active = "Todos";
+const listEl = document.getElementById("list");
+const chipsEl = document.getElementById("chips");
+const searchEl = document.getElementById("search");
+
+function norm(s) { return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+
+function renderChips() {
+  chipsEl.innerHTML = "";
+  CATS.forEach(c => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = c;
+    b.setAttribute("aria-pressed", String(c === active));
+    b.addEventListener("click", () => { active = c; renderChips(); renderList(); });
+    chipsEl.appendChild(b);
+  });
+}
+
+function renderList() {
+  const q = norm(searchEl.value.trim());
+  const items = PRODUCTS.filter(p => {
+    const inCat = active === "Todos" || p.cat === active || p.tags.includes(active);
+    const inSearch = !q || norm(p.name + " " + p.why + " " + p.cat).includes(q);
+    return inCat && inSearch;
+  });
+  listEl.innerHTML = "";
+  if (!items.length) {
+    const li = document.createElement("li");
+    li.className = "empty";
+    li.textContent = "Nenhum produto encontrado. Tente outra palavra ou toque em Todos.";
+    listEl.appendChild(li);
+    return;
+  }
+  items.forEach(p => {
+    const li = document.createElement("li");
+    li.className = "item"; li.id = "p-" + p.id;
+    const img = document.createElement("img");
+    img.src = p.img; img.alt = p.name; img.loading = "lazy"; img.width = 104; img.height = 104;
+    const info = document.createElement("div"); info.className = "info";
+    const tag = document.createElement("span"); tag.className = "tag";
+    tag.textContent = p.video ? `#${p.video} no vídeo · ${p.cat}` : p.cat;
+    const name = document.createElement("p"); name.className = "name"; name.textContent = p.name;
+    const why = document.createElement("p"); why.className = "why"; why.textContent = p.why;
+    const meta = document.createElement("div"); meta.className = "meta";
+    const price = document.createElement("span"); price.className = "price"; price.textContent = p.price;
+    const proof = document.createElement("span"); proof.textContent = p.proof;
+    meta.append(price, proof);
+    const a = document.createElement("a");
+    a.className = "buy"; a.href = p.url; a.target = "_blank"; a.rel = "noopener sponsored";
+    a.textContent = "Ver na Shopee →";
+    info.append(tag, name, why, meta, a);
+    li.append(img, info);
+    listEl.appendChild(li);
+  });
+}
+
+document.getElementById("show-latest").addEventListener("click", () => {
+  active = "Do último vídeo"; searchEl.value = ""; renderChips(); renderList();
+  listEl.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+});
+searchEl.addEventListener("input", renderList);
+renderChips(); renderList();
+</script>
+
+</body>
+</html>
