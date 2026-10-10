@@ -99,7 +99,7 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
     <img class="mark" src="img/foto_perfil.jpg" alt="Achadinhos de Casa" width="88" height="88">
     <h1>Achadinhos de Casa</h1>
     <a class="handle" href="https://www.instagram.com/achadinhosdecasa265/" target="_blank" rel="noopener">@achadinhosdecasa265</a>
-    <p class="tagline">Os achadinhos que eu recomendo pra sua casa. Toque no produto e compre direto na Shopee.</p>
+    <p class="tagline">Achadinhos de casa e beleza com preço bom. Toque no produto e compre direto na Shopee.</p>
   </header>
 
   <section class="latest" aria-labelledby="latest-title">
@@ -118,12 +118,33 @@ footer p { margin: 0; max-width: 46ch; justify-self: center; }
 
   <footer>
     <p>Os links são de afiliada: quando você compra por eles, eu ganho uma pequena comissão e você não paga nada a mais.</p>
-    <p>Preços conferidos em 08/10. Podem mudar a qualquer momento na Shopee.</p>
+    <p>Preços conferidos entre 08 e 10/10. Podem mudar a qualquer momento na Shopee.</p>
   </footer>
 </div>
 
 <script>
 const PRODUCTS = [
+  { id: "garrafa", name: "Garrafa Térmica Watersy 500 ml em Aço Inox", cat: "Cozinha", tags: ["Novidades"], video: 0,
+    why: "Água geladinha por até 24h (ou quente por até 12h). Ajuda a bater a meta de água do dia.", price: "R$ 29,89", proof: "nota 5,0 · 6 mil+ vendidas",
+    img: "img/garrafa.jpg", url: "https://s.shopee.com.br/6VOXELexIs" },
+  { id: "po", name: "Pó Translúcido Playboy Photo Microfinish", cat: "Beleza", tags: ["Novidades"], video: 0,
+    why: "Fininho, segura o brilho e não deixa a pele branca nem na foto.", price: "R$ 29,90", proof: "pó solto translúcido",
+    img: "img/po.jpg", url: "https://s.shopee.com.br/AUufiNx3XR" },
+  { id: "curvex", name: "Curvex Curvador de Cílios com Pegada Confortável", cat: "Beleza", tags: ["Novidades"], video: 0,
+    why: "Curva até cílio reto, sem beliscar a pálpebra.", price: "R$ 10,99", proof: "pegada confortável",
+    img: "img/curvex.jpg", url: "https://s.shopee.com.br/4VdSZO1d23" },
+  { id: "oil", name: "Oil Glam Blindado Champagne · Kohll Beauty", cat: "Beleza", tags: ["Novidades"], video: 0,
+    why: "Óleo iluminador de brilho dourado delicado. Pele de festa sem ficar grudenta.", price: "R$ 139,99", proof: "nota 5,0",
+    img: "img/oil.jpg", url: "https://s.shopee.com.br/4B0cAnfx9k" },
+  { id: "clutch", name: "Bolsa Clutch Dourada de Festa", cat: "Moda", tags: ["Novidades"], video: 0,
+    why: "Pra madrinha, formatura e Réveillon. Cabe celular, batom e chave.", price: "R$ 46,90", proof: "nota 4,9 · 6 mil+ vendidas",
+    img: "img/clutch.jpg", url: "https://s.shopee.com.br/60SGMCCIyH" },
+  { id: "paleta", name: "Paleta de Sombras To Go Nádia Tambasco · Océane", cat: "Beleza", tags: ["Novidades"], video: 0,
+    why: "Cores versáteis, alta pigmentação e longa duração. Cabe na bolsa.", price: "R$ 58,50", proof: "nota 4,8",
+    img: "img/paleta.jpg", url: "https://s.shopee.com.br/1VzqzxAtMQ" },
+  { id: "pinceis", name: "Kit 13 Pincéis de Maquiagem + 2 Esponjas com Estojo", cat: "Beleza", tags: ["Novidades"], video: 0,
+    why: "Tudo que precisa pra base, pó e olhos, guardado no estojo.", price: "R$ 22,00", proof: "nota 4,6 · 300+ vendidos",
+    img: "img/pinceis.jpg", url: "https://s.shopee.com.br/4VdSZTzCih" },
   { id: "utensilios", name: "Kit 12 Peças de Utensílios em Silicone e Bambu", cat: "Cozinha", tags: ["Promoção do dia"], video: 0,
     why: "Pegador, batedor, espátulas, conchas e o porta-utensílios..", price: "R$ 28,90", oldPrice: "R$ 99,00", off: "-71%", proof: "50 mil+ vendidos",
     img: "img/utensilios.jpg", url: "https://s.shopee.com.br/30ocFr95jK" },
@@ -183,7 +204,7 @@ const PRODUCTS = [
     img: "img/organizador_maquiagem.jpg", url: "https://s.shopee.com.br/BUQxNOdyz" }
 ];
 
-const CATS = ["Todos", "Promoção do dia", "Do último post", ...Array.from(new Set(PRODUCTS.map(p => p.cat)))];
+const CATS = ["Todos", "Novidades", "Promoção do dia", "Do último post", ...Array.from(new Set(PRODUCTS.map(p => p.cat)))];
 let active = "Todos";
 const listEl = document.getElementById("list");
 const chipsEl = document.getElementById("chips");
