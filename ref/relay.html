@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>relay</title></head>
+<body style="background:#111;color:#eee;font:14px sans-serif">enviando imagens…
+<script>
+(async () => {
+  const names = (new URLSearchParams(location.search).get('f') || 'mop_inicio.jpg,mop_fim.jpg').split(',');
+  const files = [];
+  for (const n of names) {
+    const b = await fetch(n + '?v=' + Date.now()).then(r => r.blob());
+    files.push({ name: n, type: b.type || 'image/jpeg', buf: await b.arrayBuffer() });
+  }
+  if (window.opener) {
+    window.opener.postMessage({ kind: 'relay-files', files }, 'https://dreamina.capcut.com');
+    document.body.textContent = 'ok';
+    setTimeout(() => window.close(), 800);
+  } else {
+    document.body.textContent = 'sem opener';
+  }
+})();
+</script></body></html>
